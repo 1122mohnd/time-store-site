@@ -164,4 +164,75 @@
     color:#0b5bd7;
     font-size:1rem;
   }
+  .hero-media img {
+    max-width: 350px;   /* الحجم */
+    height: auto;
+    transform: rotate(-90deg); /* تدوير 90 درجة */
+  }
+  /* ==== تحسين العرض على الشاشات الصغيرة ==== */
+
+/* موبايل كبير إلى متوسط */
+@media (max-width: 900px){
+  /* شبكة الهيرو عمود واحد (الصورة فوق/تحت النص) */
+  .hero-grid{
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .hero-copy{
+    text-align: center;
+  }
+  .hero-copy h1{ font-size: 1.6rem; }
+  .hero-copy p{ font-size: 0.95rem; }
+  .btn{ width: auto; }
+  
+  /* الصورة: توسيط وضبط الحجم */
+  .hero-media{ display:flex; justify-content:center; }
+  .hero-media img{
+    max-width: 320px;   /* غيّرها حسب ما تحب */
+    height: auto;
+    transform: none;    /* ألغِ التدوير على الجوال إن كان عامل دوران */
+  }
+
+  /* القوائم العلوية: تصغير وتغليف للسطر التالي عند الزحمة */
+  .menu{
+    gap: 12px;
+    font-size: .95rem;
+    flex-wrap: wrap;         /* يسمح بالنزول للسطر التالي */
+    justify-content: center; /* توسيط الروابط */
+  }
+
+  /* خطوات آلية العمل: عمودين */
+  .steps{ grid-template-columns: repeat(2, 1fr); gap: 12px; }
+}
+
+/* موبايل صغير جداً */
+@media (max-width: 480px){
+  .sec-title{ font-size: 1.3rem; }
+  .lead{ font-size: .95rem; }
+
+  /* بطاقات الخدمات: عمود واحد */
+  .cards,
+  .cards.grid-2{
+    grid-template-columns: 1fr;
+  }
+
+  /* معرض الأعمال: خلية أعرض شوية لكن تبقى مرنة */
+  .portfolio-grid{
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 14px;
+  }
+  .work img{ height: 140px; }
+
+  /* نموذج التواصل: حقلين تحت بعض */
+  .contact-form .row{
+    grid-template-columns: 1fr;
+  }
+
+  /* صورة الهيرو أصغر أكثر */
+  .hero-media img{
+    max-width: 260px;
+  }
+}
+
+  
     
